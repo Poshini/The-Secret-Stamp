@@ -4,20 +4,21 @@
    <script type=text/javascript src="/js/index.js"></script> -->
 <!-- 		<link rel="stylesheet" type="text/css" media="all" href="{{ url_for('static', filename='component.css') }}" />
 		<script type=text/javascript src="{{url_for('static', filename='modernizr.custom.js') }}"></script> -->
-		<title>Distributed Certificate Store App</title>
+		<title>The Secret Stamp</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
 	</head>
 <body class="container">
-  <h1>Distributed Certificate Store App</h1>
+  <h1>The Secret Stamp</h1>
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li ><a href="/">Issuer</a></li>
       <li ><a href="/2">Verifier</a></li>
     </ul>
+    <h5 style="color: blanchedalmond; margin-left:370px;margin-top: 15px ;">Certificate will be valid only 2 weeks upon generation</h5>
   </div>
 </nav>
       <fieldset>
@@ -41,41 +42,31 @@
               </tr>
               <tr>
                 <th scope="row">2</th>
-                <td>Branch</td>
-                <td><% if(branch !== null){ %><p><%= branch %></p><% } %></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                 <td>CGPA</td>
-                <td><% if(cgpa !== null){ %><p><%= cgpa %></p><% } %></td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
                 <td>Email</td>
                 <td><% if(email !== null){ %><p><%= email %></p><% } %></td>
               </tr>
               <tr>
-                <th scope="row">5</th>
+                <th scope="row">3</th>
                 <td>Issuer</td>
                 <td><% if(issuer !== null){ %><p><%= issuer %></p><% } %></td>
               </tr>
               <tr>
-                <th scope="row">6</th>
-                <td>Pass Out</td>
+                <th scope="row">4</th>
+                <td>Certificate Generation time</td>
                 <td><% if(datetime !== null){ %><p><%= datetime %></p><% } %></td>
               </tr>
               <tr>
-                <th scope="row">7</th>
+                <th scope="row">5</th>
                 <td>Previous Hash</td>
                 <td><% if(prehash !== null){ %><p><%= prehash %></p><% } %></td>
               </tr>
               <tr>
-                <th scope="row">8</th>
+                <th scope="row">6</th>
                 <td>Time Stamp</td>
                 <td><% if(timestamp !== null){ %><p><%= timestamp %></p><% } %></td>
               </tr>
               <tr>
-                <th scope="row">9</th>
+                <th scope="row">7</th>
                 <td>Hash</td>
                 <td><% if(hash !== null){ %><p><%= hash %></p><% } %></td>
               </tr>

@@ -4,20 +4,21 @@
    <script type=text/javascript src="/js/index.js"></script> -->
 <!-- 		<link rel="stylesheet" type="text/css" media="all" href="{{ url_for('static', filename='component.css') }}" />
 		<script type=text/javascript src="{{url_for('static', filename='modernizr.custom.js') }}"></script> -->
-		<title>Distributed Certificate Store App</title>
+		<title>The Secret Stamp</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
 	</head>
 <body class="container">
-  <h1>Distributed Certificate Store App</h1>
+  <h1>The Secret Stamp</h1>
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li ><a href="/">Issuer</a></li>
       <li ><a href="/2">Verifier</a></li>
     </ul>
+    <h5 style="color: blanchedalmond; margin-left:370px;margin-top: 15px ;">Certificate will be valid only 2 weeks upon generation</h5>
   </div>
 </nav>
       <fieldset>
@@ -47,17 +48,7 @@
                 <th scope="row">3</th>
                 <td>Degree No.</td>
                 <td><% if(degree_no !== null){ %><p><%= degree_no %></p><% } %></td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Branch</td>
-                <td><% if(branch !== null){ %><p><%= branch %></p><% } %></td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                 <td>CGPA</td>
-                <td><% if(cgpa !== null){ %><p><%= cgpa %></p><% } %></td>
-              </tr>
+              </tr>    
               <tr>
                 <th scope="row">6</th>
                 <td>Email</td>

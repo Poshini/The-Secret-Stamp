@@ -1,21 +1,22 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="en-US" style="background-color:bisque;">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-  <title>Distributed Certificate Store App</title>
-  <!-- <link rel="stylesheet" type="text/css" media="all" href="{{ url_for('static', filename='css/style.css') }}" />
-   <script type=text/javascript src="{{url_for('static', filename='js/index.js') }}"></script> -->
+  <title>The Secret Stamp</title>
+  <link rel="stylesheet" type="text/css" media="all" href="{{ url_for('static', filename='css/style.css') }}" />
+   <!-- <script type=text/javascript src="{{url_for('static', filename='js/index.js') }}"></script> -->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
-    
+  <script src="https://restcountries.eu/rest/v2/all"></script>
 
 
 </head>
 
-<body class="container">
-  <h1>Distributed Certificate Store App</h1>
+<body class="container" style="border:black; border-width:2px; border-style:solid; height:800px; margin-top:80px;">
+  <h1 style="text-align: center;">The Secret Stamp</h1>
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
@@ -25,63 +26,72 @@
   Find Lawfirms
 </button></a></li> -->
     </ul>
+    <h5 style="color: blanchedalmond; margin-left:370px;margin-top: 15px ;">Certificate will be valid only 2 weeks upon generation</h5>
   </div>
 </nav>
 
 <!-- <form enctype='application/json' id="myForm" type="post"> -->
-<form id="myForm" action="/3" method="post">
+<form id="myForm" action="/3" method="post" style="margin:0 8px 0 8px;" autocomplete="off">
     <div class="form-group row">
+      <i class="fa fa-user"></i>
       <label for="example-text-input" class="col-2 col-form-label">Full Name</label>
       <div class="col-10">
         <input name='name' class="form-control" type="text" id="name_input">
       </div>
     </div>
     <div class="form-group row">
+      <i class="fa fa-address-book"></i>
       <label for="example-search-input" class="col-2 col-form-label">Enroll</label>
       <div class="col-10">
         <input name='enroll' class="form-control" type="text" id="enroll_input">
       </div>
     </div>
     <div class="form-group row">
+      <i class="fa fa-id-badge"></i>
       <label for="example-number-input" class="col-2 col-form-label">Degree No</label>
       <div class="col-10">
-        <input name='degree_no' class="form-control" type="number" value="456465" id="degree_input">
+        <input name='degree_no' class="form-control" type="number" value="17113080" id="degree_input">
       </div>
     </div>
     <div class="form-group row">
-      <label for="example-email-input" class="col-2 col-form-label">Branch</label>
-      <div class="col-10">
-        <input name='branch' class="form-control" type="text" value="CSE" id="branch_input">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="example-url-input" class="col-2 col-form-label">CGPA</label>
-      <div class="col-10">
-        <input name='cgpa' class="form-control" type="number" value="8.0" id="cgpa_input">
-      </div>
-    </div>
-    <div class="form-group row">
+      <i class="fa fa-envelope"></i>
       <label for="example-tel-input" class="col-2 col-form-label">Email</label>
       <div class="col-10">
-        <input name='email' class="form-control" type="email" value="rahul.nitsxr@gmail.com" id="email_input">
+        <input name='email' class="form-control" type="email" value="poshiniganesh@gmail.com" id="email_input">
       </div>
     </div>
     <div class="form-group row">
+      <i class="fa fa-map"></i>
+      <label for="example-tel-input" class="col-2 col-form-label">Country</label>
+      <div class="col-10">
+        <input name='email' class="form-control" type="text" value="" id="country_input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <i class="fa fa-compass fa-x"></i>
+      <label for="example-tel-input" class="col-2 col-form-label">City</label>
+      <div class="col-10">
+        <input name='email' class="form-control" type="text" value="" id="city_input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <i class="fa fa-pencil"></i>
       <label for="example-password-input" class="col-2 col-form-label">Issuer Name/ID/Sign</label>
       <div class="col-10">
         <input name='mobile' class="form-control" type="text" value="CSE Department" id="issuer_input">
       </div>
     </div>
     <div class="form-group row">
-      <label for="example-datetime-local-input" class="col-2 col-form-label">Pass Out Time</label>
+      <i class="fa fa-clock-o"></i>
+      <label for="example-datetime-local-input" class="col-2 col-form-label">Certificate Generation time</label>
       <div class="col-10">
-        <input name='datetime' class="form-control" type="datetime-local" value="2018-04-09T20:00:00" id="datetime_input">
+        <input name='datetime' class="form-control" type="datetime-local" value="2021-04-01T20:00:00" id="datetime_input">
       </div>
     </div>
 <!-- <button type="submit" class="btn btn-primary" value="Submit" >Sign in</button> -->
 <!-- <button type="button" class="btn btn-primary" onclick="submitform()">Get JSON</button> -->
 <!-- <script type=text/javascript src="{{url_for('static', filename='js/index.js') }}"></script> -->
-<button type="submit" class="btn btn-primary" onclick="submitform()">Issue Certificate</button>
+<button type="submit" class="btn btn-primary" onclick="submitform()" style="margin-left: 500px;">Issue Certificate</button>
 <!-- <script type="text/javascript">
   // var formData;
   //   function submitform(){

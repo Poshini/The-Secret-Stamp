@@ -9,7 +9,7 @@ var http_port = process.env.HTTP_PORT || 3000;
 // var initialPeers = process.env.PEERS ? process.env.PEERS.split(',') : [];
 // var peer_address="ws://localhost:6001";
 
-var name, enroll, email, degree_no, cgpa, datetime, issuer, email;
+var name, enroll, email, degree_no,datetime, issuer, email;
 var data={};
 
 const apiKey = '*****************';
@@ -85,16 +85,12 @@ var initHttpServer = () => {
       name=req.body.name;
       enroll=req.body.enroll;
       degree_no=req.body.degree_no;
-      branch=req.body.branch;
-      cgpa=req.body.cgpa;
       email=req.body.email;
       issuer=req.body.mobile;
       datetime=req.body.datetime;
       data1['name']=name;
       data1['email']=email;
       data1['enroll']=enroll;
-      data1['branch']=branch;
-      data1['cgpa']=cgpa;
       data1['degree_no']=degree_no;
       data1['issuer']=issuer;
       data1['datetime']=datetime;
@@ -137,7 +133,7 @@ var initHttpServer = () => {
         var hash=obj.hash;
         var enroll1=obj['data'].enroll;
         res.render('index3', {name:name, enroll:enroll1, degree_no:degree_no,
-        branch:branch, cgpa:cgpa, email:email, issuer:issuer, datetime:datetime,
+        email:email, issuer:issuer, datetime:datetime,
         prehash:prehash, timestamp:timestamp, hash:hash, error: null});
       }else if(count==1){
         var invalid="Invalid! Enroll Already";
@@ -176,8 +172,6 @@ var initHttpServer = () => {
         var name=obj1['data'].name;
         var enroll=obj1['data'].enroll;
         var degree_no=obj1['data'].degree_no;
-        var  branch=obj1['data'].branch;
-        var cgpa=obj1['data'].cgpa;
         var email=obj1['data'].email;
         var issuer=obj1['data'].issuer;
         var datetime=obj1['data'].datetime;
@@ -188,7 +182,7 @@ var initHttpServer = () => {
         var timestamp=obj1.timestamp;
         var hash=obj1.hash;
         res.render('index4', {name:name, enroll:enroll, degree_no:degree_no,
-        branch:branch, cgpa:cgpa, email:email, issuer:issuer, datetime:datetime,
+        email:email, issuer:issuer, datetime:datetime,
         prehash:prehash, timestamp:timestamp, hash:hash, error: null});
       }else{
           res.send("This Enroll and Degree No are Not Found.");
